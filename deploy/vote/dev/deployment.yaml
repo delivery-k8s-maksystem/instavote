@@ -7,14 +7,9 @@ metadata:
     tier: front
   name: vote
 spec:
-  replicas: 5
+  replicas: 3
   template:
     spec:
       containers:
-      - image: schoolofdevops/vote:v3
+      - image: schoolofdevops/vote:v4
         name: vote
-        envFrom: 
-          - configMapRef: 
-              name: vote-options
-              optional: true
-

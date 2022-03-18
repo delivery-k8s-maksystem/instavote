@@ -3,25 +3,22 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: vote
-    tier: front
-  name: vote
+    app: worker
+  name: worker
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
-      app: vote
+      app: worker
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: vote
-        tier: front
+        app: worker
     spec:
       containers:
-      - image: schoolofdevops/vote:v1
-        name: vote
-        imagePullPolicy: Always
+      - image: schoolofdevops/worker:latest
+        name: worker
         resources: {}
-
+status: {}
